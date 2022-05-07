@@ -15,5 +15,4 @@ fun main() {
     println(doubleArray[2])
     doubleArray.set(3, 9.0)
     println(doubleArray.size)
-
 }

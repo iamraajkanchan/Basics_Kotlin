@@ -14,17 +14,37 @@ fun main() {
 
 //------------------ Map and Mutable Map----------------------------
     var maleProgrammer = mutableMapOf<Int, String>()
-    maleProgrammer.put(1, "Abhishek")
-    maleProgrammer.put(2, "Rahul")
-    maleProgrammer.put(3, "Dhulaji")
-    maleProgrammer.put(4, "RavishRanjane")
+    maleProgrammer.put(3, "Abhishek")
+    maleProgrammer.put(4, "Rahul")
+    maleProgrammer.put(2, "Dhulaji Pandhare")
+    maleProgrammer.put(1, "Ravish Ranjane")
     maleProgrammer.put(5, "Mayur")
 
-    var newProgrammer = mapOf<Int, String>(6 to "Raaj", 6 to "Shivam")
+    var newProgrammer = mapOf(6 to "Raaj", 6 to "Shivam")
     maleProgrammer.putAll(newProgrammer)
+    maleProgrammer.toSortedMap()
+
 
     showMutableMapProgrammerValues(maleProgrammer)
 
+    val programName = ArrayList<String>()
+    programName.apply {
+        add("SmartDrive")
+        add("PetroCorp")
+        add("SmartFleet")
+    }
+
+    var programNameClone = arrayListOf("", "", "")
+    programName.forEachIndexed { index, program ->
+        when (program) {
+            "SmartDrive" -> programNameClone[1] = programName[index]
+            "PetroCorp" -> programNameClone[2] = programName[index]
+            "SmartFleet" -> programNameClone[0] = programName[index]
+        }
+    }
+
+    println("Main :: programNameClone : $programNameClone")
+    println("Main :: programNameClone : ${programNameClone.size}")
 }
 
 fun showMutableListIntValues(list: MutableList<Int>) {
