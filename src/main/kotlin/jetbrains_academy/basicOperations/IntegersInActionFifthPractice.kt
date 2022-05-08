@@ -1,4 +1,4 @@
-package jetbrains_academy
+package jetbrains_academy.basicOperations
 
 class IntegersInActionFifthPractice {
     fun calculateCost() {

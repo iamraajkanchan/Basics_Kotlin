@@ -1,4 +1,4 @@
-package jetbrains_academy
+package jetbrains_academy.basicOperations
 
 fun main() {
     val invitation = readLine()?.toBoolean()!!
