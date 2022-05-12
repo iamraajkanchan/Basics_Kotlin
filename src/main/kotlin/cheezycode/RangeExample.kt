@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     val myFirstDice = Dice()
     println(myFirstDice.roll())

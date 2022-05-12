@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     var redTile: Red = Red("Red", 25)
     var blueTile: Blue = Blue("Blue", points = 20)

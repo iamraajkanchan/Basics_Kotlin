@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
 
     var car = Automobile(name = "Mercedes", 4, 5, true)

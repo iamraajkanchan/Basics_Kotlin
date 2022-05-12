@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     var building1 = Building("pleasant park ", -1)
     building1.location = "Mira Road"

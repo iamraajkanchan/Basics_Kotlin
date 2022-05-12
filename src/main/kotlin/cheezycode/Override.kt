@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     var mobileObj = Mobile("Basic Phone")
     mobileObj.name = "Panasonic"

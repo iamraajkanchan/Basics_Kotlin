@@ -1,3 +1,5 @@
+package cheezycode
+
 import kotlin.math.pow
 
 fun main() {

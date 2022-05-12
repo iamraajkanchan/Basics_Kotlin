@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     var score: Int = 5
     var temperature: Double = 89.4

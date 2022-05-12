@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     val mustang = Car("Mustang", "Petrol", 100)
     val beetle = Car(name = "Volkswagen Beetle", type = "Petrol", kmRan = 300)

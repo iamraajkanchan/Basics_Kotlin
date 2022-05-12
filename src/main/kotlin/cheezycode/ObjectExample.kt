@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
 //    This is also called Singleton Pattern. As you can see no object is needed to access methods of SharingWidget Object.
     SharingWidget.incrementFacebookLikes()

@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main(args: Array<String>) {
     var gender: String = "Male" // "Female", "Others"
 //    var gender2: String = null; // In this case you are assigning a null value to gender2 so the compiler is creating an issue

@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     val dayInWeek: DayInWeek = DayInWeek.Weekday
     println(dayInWeek)

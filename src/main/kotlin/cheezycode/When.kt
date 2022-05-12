@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     val animal: String = "Dog"
     when (animal) {

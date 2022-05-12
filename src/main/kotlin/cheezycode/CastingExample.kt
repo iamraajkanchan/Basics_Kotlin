@@ -1,3 +1,5 @@
+package cheezycode
+
 fun main() {
     val circle: CircleCastingExample = CircleCastingExample(9.0)
     val square: SquareCastingExample = SquareCastingExample(3.4)
