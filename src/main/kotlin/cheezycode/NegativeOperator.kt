@@ -1,7 +1,7 @@
 package cheezycode
 
 fun main() {
-    var answer: Boolean = false;
-    var result = !answer;
+    val answer: Boolean = false;
+    val result = !answer;
     println(result)
 }

@@ -19,7 +19,6 @@ abstract class Font() {
 
 class AdobeFont(fontNameParam: String) : Font() {
     override val name: String = fontNameParam
-        get() = field
 
     override fun returnName(): String {
         return name

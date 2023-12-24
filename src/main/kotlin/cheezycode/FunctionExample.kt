@@ -4,19 +4,19 @@ import kotlin.math.pow
 
 fun main() {
 //  Calling and Storing value from a regular method.
-    var additionResult = add(5, 6)
+    val additionResult = add(5, 6)
     println(additionResult)
 
 //    Calling and Storing value from an Inline method.
-    var subtractionResult = subtract(12, 9)
+    val subtractionResult = subtract(12, 9)
     println(subtractionResult)
 
 //    Calling a Unit method.
     modulus(13)
 
 //    Storing a function in a variable.
-    var functionClone: (num1: Int, num2: Int) -> Int = ::add
-    var additionResultClone = functionClone(23, 48)
+    val functionClone: (num1: Int, num2: Int) -> Int = ::add
+    val additionResultClone = functionClone(23, 48)
     println(additionResultClone)
 
 //    Calling and Storing value from a named argument.

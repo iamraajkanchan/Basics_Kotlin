@@ -17,7 +17,7 @@ fun main() {
     println(result)
 
     val number: Int = 20
-    var modResult = when {
+    val modResult = when {
         number % 2 == 0 -> "Number is even"
         else -> "Number is odd"
     }

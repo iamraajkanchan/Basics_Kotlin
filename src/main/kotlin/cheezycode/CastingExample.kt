@@ -4,7 +4,7 @@ fun main() {
     val circle: CircleCastingExample = CircleCastingExample(9.0)
     val square: SquareCastingExample = SquareCastingExample(3.4)
     val player: PlayerCastingExample = PlayerCastingExample("Steve Smith")
-    var objArray: Array<DraggingCastingExample> = arrayOf(circle, player, square)
+    val objArray: Array<DraggingCastingExample> = arrayOf(circle, player, square)
     println("Using when to access the objects")
     for (obj in objArray) {
         when (obj) {

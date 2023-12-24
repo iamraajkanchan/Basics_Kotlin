@@ -2,22 +2,22 @@ package cheezycode
 
 fun main() {
 
-    var car = Automobile(name = "Mercedes", 4, 5, true)
+    val car = Automobile(name = "Mercedes", 4, 5, true)
     println("${car.name} has airbags ${car.airBagsAvailability}")
 
-    var p1 = Person("Abhishek", 29)
-    var p2 = Person("Kruti", 17)
+    val p1 = Person("Abhishek", 29)
+    val p2 = Person("Kruti", 17)
     println("${p1.name} can vote ${p1.canVote}")
     println("${p2.name} can vote ${p2.canVote}")
 
-    var student1 = Student("John Doe", 9)
-    var student2 = Student("Ivy Fernandez", 12)
+    val student1 = Student("John Doe", 9)
+    val student2 = Student("Ivy Fernandez", 12)
     student1.showSchoolName()
     student2.showSchoolName()
     student1.showClassStandard()
     student2.showClassStandard()
 
-    var calc = Calculator()
+    val calc = Calculator()
     println(calc.add(23, 45))
     println(calc.multiply(13, 23))
 }
