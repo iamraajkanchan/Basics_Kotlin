@@ -12,14 +12,23 @@ fun main() {
 
     val student1 = Student("John Doe", 9)
     val student2 = Student("Ivy Fernandez", 12)
+    val student3 = Student("Winston Churchill", 3, "Boston School of London", true)
     student1.showSchoolName()
     student2.showSchoolName()
     student1.showClassStandard()
     student2.showClassStandard()
-
+    if (student3.isUsingBusService()) {
+        print("Student 3 is using Bus Service")
+    } else {
+        print("Student 3 is not using Bus Service")
+    }
     val calc = Calculator()
     println(calc.add(23, 45))
     println(calc.multiply(13, 23))
+    val firstTeacher = Teacher(24)
+    val secondTeacher = Teacher("Jack Sparrow")
+    firstTeacher.showDetails()
+    secondTeacher.showDetails()
 }
 
 // Class with Primary Constructor
@@ -41,10 +50,15 @@ class Person(nameParam: String, ageParam: Int) {
 }
 
 // Class with Secondary Constructor
-class Student(val name: String, val classStandard: Int, val schoolName: String, val availBusService: Boolean) {
-    constructor(nameParam: String, classStandardParam: Int) : this(
-        nameParam,
-        classStandardParam,
+class Student(
+    private val name: String,
+    private val classStandard: Int,
+    private val schoolName: String,
+    private val availBusService: Boolean
+) {
+    constructor(name: String, classStandard: Int) : this(
+        name,
+        classStandard,
         "Mother Mary's English High School",
         false
     )
@@ -56,13 +70,17 @@ class Student(val name: String, val classStandard: Int, val schoolName: String, 
     fun showClassStandard() {
         println("$name has in $classStandard standard")
     }
+
+    fun isUsingBusService(): Boolean {
+        return availBusService
+    }
 }
 
 // Class with no Constructor but with Properties and Methods
 class Calculator {
 
     //    With the help of lateInit keyword you won't have to define a variable at the time of declaration.
-    lateinit var message: String
+    private lateinit var message: String
 
     fun add(x: Int, y: Int): Int {
         return x + y;
@@ -71,4 +89,19 @@ class Calculator {
     fun multiply(x: Int, y: Int): Int {
         return x * y;
     }
+}
+
+class Teacher(private val name: String) {
+    private var age: Int? = null
+
+    constructor(age: Int) : this("John Doe") {
+        this.age = age;
+    }
+    fun setAge(age: Int) {
+        this.age = age;
+    }
+    fun showDetails() {
+        print("Teacher Name : $name, Teacher Age: ${age ?: 18}")
+    }
+
 }
