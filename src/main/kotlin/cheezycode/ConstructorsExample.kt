@@ -1,5 +1,7 @@
 package cheezycode
 
+import java.io.InvalidObjectException
+
 fun main() {
 
     val car = Automobile(name = "Mercedes", 4, 5, true)
@@ -10,6 +12,10 @@ fun main() {
     println("${p1.name} can vote ${p1.canVote}")
     println("${p2.name} can vote ${p2.canVote}")
 
+    val calc = Calculator()
+    println(calc.add(23, 45))
+    println(calc.multiply(13, 23))
+
     val student1 = Student("John Doe", 9)
     val student2 = Student("Ivy Fernandez", 12)
     val student3 = Student("Winston Churchill", 3, "Boston School of London", true)
@@ -18,17 +24,16 @@ fun main() {
     student1.showClassStandard()
     student2.showClassStandard()
     if (student3.isUsingBusService()) {
-        print("Student 3 is using Bus Service")
+        println("Student 3 is using Bus Service")
     } else {
-        print("Student 3 is not using Bus Service")
+        println("Student 3 is not using Bus Service")
     }
-    val calc = Calculator()
-    println(calc.add(23, 45))
-    println(calc.multiply(13, 23))
     val firstTeacher = Teacher(24)
     val secondTeacher = Teacher("Jack Sparrow")
+    val thirdTeacher = Teacher(12)
     firstTeacher.showDetails()
     secondTeacher.showDetails()
+    thirdTeacher.showDetails()
 }
 
 // Class with Primary Constructor
@@ -95,13 +100,19 @@ class Teacher(private val name: String) {
     private var age: Int? = null
 
     constructor(age: Int) : this("John Doe") {
-        this.age = age;
+        if (age < 18) {
+            throw IllegalArgumentException("Not a valid age for Teacher")
+        } else {
+            this.age = age;
+        }
     }
+
     fun setAge(age: Int) {
         this.age = age;
     }
+
     fun showDetails() {
-        print("Teacher Name : $name, Teacher Age: ${age ?: 18}")
+        println("Teacher Name : $name, Teacher Age: ${age ?: 18}")
     }
 
 }
