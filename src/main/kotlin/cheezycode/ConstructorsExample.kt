@@ -1,7 +1,5 @@
 package cheezycode
 
-import java.io.InvalidObjectException
-
 fun main() {
 
     val car = Automobile(name = "Mercedes", 4, 5, true)
@@ -66,7 +64,9 @@ class Student(
         classStandard,
         "Mother Mary's English High School",
         false
-    )
+    ) {
+        if (classStandard == 0) throw IllegalArgumentException("Invalid Class Room!")
+    }
 
     fun showSchoolName() {
         println("$name is studying in $schoolName")

@@ -1,7 +1,7 @@
 package cheezycode
 
 fun main() {
-    var typeAdobeFont: AdobeFont = AdobeFont("Adobe Lucinda")
+    val typeAdobeFont: AdobeFont = AdobeFont("Adobe Lucinda")
     println(typeAdobeFont.returnName())
     typeAdobeFont.displaySource()
 }

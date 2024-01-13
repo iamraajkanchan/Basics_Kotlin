@@ -10,7 +10,7 @@ fun main() {
     SharingWidget.showLikes()
 
 //    Example of Simple Object Expression
-    var obj = object {
+    val obj = object {
         var callCount: Int = 0
         var messageCount: Int = 0
         fun showCallAndMessageCounts() = println("Call Count: $callCount, Message Count: $messageCount")
@@ -21,12 +21,12 @@ fun main() {
     obj.showCallAndMessageCounts()
 
 //    Example of Object Expression with Inheritance
-    var obj1 = object : PersonObjectExample("Richard Branson") {
+    val obj1 = object : PersonObjectExample("Richard Branson") {
         fun greetUser() = println("Hello $name ")
     }
     obj1.greetUser()
 
-    var obj2 = object : UserBehaviourObjectExample {
+    val obj2 = object : UserBehaviourObjectExample {
         override fun like() {
             println("Record and Increase Likes")
         }
