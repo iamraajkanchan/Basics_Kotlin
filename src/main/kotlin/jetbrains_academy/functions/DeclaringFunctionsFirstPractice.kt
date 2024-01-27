@@ -1,9 +1,9 @@
 package jetbrains_academy.functions
 
 fun main() {
-    val letter = readLine()!!.first()
+    val letter = readlnOrNull()?.first()
 
-    println(isVowel(letter))
+    println(isVowel(letter ?: ' '))
 }
 
 private fun isVowel(char: Char) = with(char.lowercaseChar()) {

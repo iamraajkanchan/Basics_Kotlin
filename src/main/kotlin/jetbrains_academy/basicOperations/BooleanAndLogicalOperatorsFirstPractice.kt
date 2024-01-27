@@ -1,7 +1,7 @@
 package jetbrains_academy.basicOperations
 
 fun main() {
-    val invitation = readLine()?.toBoolean()!!
-    val gift = readLine()?.toBoolean()!!
-    println(invitation && gift)
+    val invitation = readlnOrNull()?.toBoolean()
+    val gift = readlnOrNull()?.toBoolean()
+    println(invitation ?: false && gift ?: false)
 }
