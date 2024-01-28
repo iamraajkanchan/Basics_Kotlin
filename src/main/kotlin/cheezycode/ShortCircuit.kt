@@ -1,7 +1,7 @@
 package cheezycode
 
 fun main() {
-    var i: Int = 10
+    val i: Int = 10
     var j: Int = 11
 
     println("Example of First Short Circuit")
@@ -10,7 +10,7 @@ fun main() {
     println(i)
     println(j)
 
-    var x: Int = 11
+    val x: Int = 11
     var y: Int = 11
 
     println("Example of Second Short Circuit")

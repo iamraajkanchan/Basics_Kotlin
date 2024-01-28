@@ -12,6 +12,8 @@ fun main() {
 abstract class Font() {
     abstract val name: String
     abstract fun returnName(): String // Abstract methods can't have a body and is by default declared by open keyword.
+
+    // This is a final concrete method which cannot be overridden by the child class.
     fun displaySource() {
         println("This Font is Used In AGS Transact Technologies LTD")
     }

@@ -1,6 +1,5 @@
 package coroutines
 
-import java.sql.Time
 import kotlin.time.*
 
 object CalculateExecutionTime {

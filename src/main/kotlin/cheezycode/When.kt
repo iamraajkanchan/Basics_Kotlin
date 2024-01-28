@@ -11,7 +11,7 @@ fun main() {
     }
 
     val bird: String = "Sparrow"
-    var birdResult = when (bird) {
+    val birdResult = when (bird) {
         "Sparrow" -> "This is a Sparrow"
         "Eagle" -> "This is an Eagle"
         "Vulture" -> "This is a Vulture"
@@ -21,7 +21,7 @@ fun main() {
     println(birdResult)
 
     val number: Int = 13
-    var numberResult = when (number) {
+    val numberResult = when (number) {
         11 -> "Eleven"
         12 -> "Twelve"
         in 13..19 -> "Teen"
