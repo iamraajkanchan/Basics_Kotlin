@@ -12,16 +12,16 @@ fun main() = runBlocking {
 }
 
 suspend fun printWorldExplicitJob() = coroutineScope {
-    val firstJob = launch {
-        delay(1000L)
+    val firstJob = launch(Dispatchers.Default) {
+        delay(2000L)
         println("First Job!")
     }
 
-    val secondJob = launch {
+    val secondJob = launch(Dispatchers.Default) {
         delay(1000L)
         println("Second Job!")
     }
-    // secondJob.join()
-    // firstJob.join() // Waits for the second job to complete first.
+    secondJob.join()
+    firstJob.join() // Waits for the second job to complete first.
     println("Jobs Complete")
 }
