@@ -4,8 +4,16 @@ import jetbrains_academy.getLength
 
 class MakeThreeStringsEqual {
     private fun findMinimumOperations(firstString: String, secondString: String, thirdString: String): Int {
-        val inputLengths = listOf(firstString, secondString, thirdString).map(String::length).toList()
-        println(inputLengths)
+        val inputLengths = listOf(firstString, secondString, thirdString).associateWith(String::length)
+        for (entry in inputLengths.entries) {
+            var i = 0
+            if (entry.value > 2) {
+                while (i + 1 < entry.key.length) {
+
+                    i++
+                }
+            } else return -1
+        }
         return -1
     }
 
