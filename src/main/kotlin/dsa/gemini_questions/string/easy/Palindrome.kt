@@ -19,4 +19,14 @@ class Palindrome {
     fun checkPalindrome(string: String) {
         println("$string is a palindrome : ${isPalindrome(string)}")
     }
+    companion object{
+        fun testPalindrome() {
+            val palindrome = Palindrome()
+            palindrome.checkPalindrome("world")
+            palindrome.checkPalindrome("deed")
+            palindrome.checkPalindrome("rotator")
+            palindrome.checkPalindrome("repaper")
+            palindrome.checkPalindrome("palindromes")
+        }
+    }
 }

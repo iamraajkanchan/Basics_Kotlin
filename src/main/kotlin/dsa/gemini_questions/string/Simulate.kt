@@ -1,12 +1,8 @@
 package dsa.gemini_questions.string
 
 import dsa.gemini_questions.string.easy.Palindrome
+import dsa.gemini_questions.string.easy.ReverseString
 
 fun main(args: Array<String>) {
-    val palindrome = Palindrome()
-    palindrome.checkPalindrome("world")
-    palindrome.checkPalindrome("deed")
-    palindrome.checkPalindrome("rotator")
-    palindrome.checkPalindrome("repaper")
-    palindrome.checkPalindrome("palindromes")
+    ReverseString.testReverseString()
 }

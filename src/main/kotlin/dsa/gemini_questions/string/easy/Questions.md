@@ -1,6 +1,6 @@
-Check if a string is palindrome
+Check if a string is palindrome - Done
 </br>
-Reverse a String
+Reverse a String - Done
 </br>
 Find the length of the longest common prefix between two strings
 </br>
