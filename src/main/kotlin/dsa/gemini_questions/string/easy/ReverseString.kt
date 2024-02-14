@@ -1,5 +1,6 @@
 package dsa.gemini_questions.string.easy
 
+// Reverse a String
 class ReverseString {
     private fun reverseMethod(string: String): String {
         val stringArray = string.toCharArray()

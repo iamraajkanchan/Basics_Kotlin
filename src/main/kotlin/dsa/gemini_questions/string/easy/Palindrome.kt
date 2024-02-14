@@ -1,5 +1,6 @@
 package dsa.gemini_questions.string.easy
 
+// Check if a string is Palindrome
 class Palindrome {
     private fun isPalindrome(string: String): Boolean {
         val stringArray = string.toCharArray()
