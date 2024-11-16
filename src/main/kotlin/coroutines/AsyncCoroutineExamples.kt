@@ -1,5 +1,6 @@
 package coroutines
 
+import common.Utility
 import kotlinx.coroutines.*
 
 fun main() {
@@ -20,9 +21,11 @@ class AsyncCoroutineExamples {
                 }
                 asyncResult = asyncTask.await()
                 println("AsyncCoroutineExample :: runBlocking :: withContext : $asyncResult :: on ${Thread.currentThread().name}")
+                Utility.printLog(AsyncCoroutineExamples::class.java, Thread.currentThread().stackTrace[2], "asyncResult :: $asyncResult")
             }
         }
         println("AsyncCoroutineExample :: runBlocking :: asyncResult : $asyncResult")
+        Utility.printLog(AsyncCoroutineExamples::class.java, Thread.currentThread().stackTrace[2], "asyncResult :: $asyncResult")
     }
 
     fun simpleAsyncExampleWithCoroutineScope() {
@@ -35,8 +38,10 @@ class AsyncCoroutineExamples {
                 }
                 asyncResult = asyncTask.await()
                 println("AsyncCoroutineExample :: CoroutineScope :: withContext : $asyncResult :: on ${Thread.currentThread().name}")
+                Utility.printLog(AsyncCoroutineExamples::class.java, Thread.currentThread().stackTrace[2], "asyncResult :: $asyncResult")
             }
         }
         println("AsyncCoroutineExample :: CoroutineScope :: asyncResult : $asyncResult")
+        Utility.printLog(AsyncCoroutineExamples::class.java, Thread.currentThread().stackTrace[2], "asyncResult :: $asyncResult")
     }
 }
