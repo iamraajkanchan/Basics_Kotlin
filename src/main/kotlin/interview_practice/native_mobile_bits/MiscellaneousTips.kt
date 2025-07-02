@@ -1,7 +1,4 @@
 package interview_practice.native_mobile_bits
-
-import kotlin.math.min
-
 class MiscellaneousTips {
 
     init {

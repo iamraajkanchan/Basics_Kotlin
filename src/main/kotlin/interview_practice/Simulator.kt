@@ -11,6 +11,6 @@ fun main(args: Array<String>) {
     val zipExamples = ZipExamples()
     // zipExamples.simulateZipMethod()
     val arrayExamples = ArrayExamples()
-    // arrayExamples.simulate()
-    val miscellaneousTips = MiscellaneousTips()
+    arrayExamples.createIntArray()
+    // val miscellaneousTips = MiscellaneousTips()
 }
