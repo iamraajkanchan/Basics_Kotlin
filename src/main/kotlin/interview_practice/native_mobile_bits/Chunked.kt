@@ -2,8 +2,8 @@ package interview_practice.native_mobile_bits
 
 import java.util.stream.Collectors
 
-typealias ListOfString = List<String>
-typealias SetOfString = Set<String>
+typealias ListOfCats = List<String>
+typealias SetOfCats = Set<String>
 
 class Chunked {
     companion object {
@@ -39,8 +39,8 @@ class Chunked {
             "Lucky",
             "Twinkle"
         )
-        fun getCatList(): ListOfString = catList
-        fun getCatSet() : SetOfString = catSet
+        fun getCatList(): ListOfCats = catList
+        fun getCatSet() : SetOfCats = catSet
     }
 
     fun chunkList() {
