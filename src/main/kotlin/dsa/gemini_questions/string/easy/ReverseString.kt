@@ -20,13 +20,11 @@ class ReverseString {
         println("Reversing $string : ${reverseMethod(string)}")
     }
 
-    companion object {
-        fun testReverseString() {
-            val reverseString = ReverseString()
-            reverseString.reverse("Hello")
-            reverseString.reverse("Mumbai")
-            reverseString.reverse("India")
-        }
+    fun testReverseString() {
+        val reverseString = ReverseString()
+        reverseString.reverse("Hello")
+        reverseString.reverse("Mumbai")
+        reverseString.reverse("India")
     }
 
 }

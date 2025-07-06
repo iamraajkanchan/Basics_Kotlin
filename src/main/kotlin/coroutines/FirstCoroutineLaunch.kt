@@ -2,7 +2,7 @@ package coroutines
 
 import kotlinx.coroutines.*
 
-fun main() = runBlocking {
+suspend fun main() = withContext(Dispatchers.Default) {
     println("runBlocking")
     launch {
         delay(2000)

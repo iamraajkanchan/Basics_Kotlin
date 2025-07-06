@@ -5,7 +5,7 @@ import java.time.Duration
 import kotlin.time.*
 
 @OptIn(ExperimentalTime::class)
-fun main() = runBlocking {
+suspend fun main() = withContext(Dispatchers.Default) {
     val res: TimedValue<Unit> = measureTimedValue { printWorldExplicitJob() }
     // println("It took ${res.duration.toComponents { seconds, _ -> seconds }}s to calculate ${res.value}")
     println("It took ${res.duration} to calculate ${res.value}")
