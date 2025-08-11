@@ -2,11 +2,6 @@ package coroutines
 
 import kotlinx.coroutines.*
 
-fun main() = runBlocking {
-    val coroutineScopeInstance = CoroutineScopeExamples()
-    coroutineScopeInstance.printWorld()
-}
-
 class CoroutineScopeExamples {
     suspend fun printWorld() = coroutineScope {
         CalculateExecutionTime.setStartTime()

@@ -7,7 +7,6 @@ class MakeThreeStringsEqual {
             var i = 0
             if (entry.value > 2) {
                 while (i + 1 < entry.key.length) {
-
                     i++
                 }
             } else return -1
