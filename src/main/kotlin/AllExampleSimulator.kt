@@ -5,15 +5,18 @@ import coroutines.CalculateExecutionTime
 import coroutines.CoroutineScopeAndBuilder
 import coroutines.CoroutineScopeExamples
 import coroutines.printWorldExplicitJob
+import dsa.apna_college.ArrayQuestion
+import dsa.apna_college.PatternQuestion
 import interview_practice.dsa.DSAOnString
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
 import kotlin.time.ExperimentalTime
 import kotlin.time.TimedValue
 import kotlin.time.measureTimedValue
 
 fun main() {
-    simulateSingletonClassDemo()
+    // simulateSingletonClassDemo()
+    // simulatePatternQuestionMethods()
+    simulateArrayQuestionMethods()
 }
 
 suspend fun simulateCoroutineScopeAndBuilder() {
@@ -54,6 +57,21 @@ suspend fun simulateBasicCoroutines() : String {
 fun simulateSingletonClassDemo() {
     val demo = SingletonClassDemo.getInstance()
     println(demo.name)
+}
+
+fun simulatePatternQuestionMethods() {
+    val patterns = PatternQuestion()
+    // patterns.printSquarePatternWithSameElement(4)
+    // patterns.printSquarePatternWithDifferentElement(3)
+    // patterns.printTrianglePatternWithSameElementInAscendingOrder(4)
+    patterns.printTrianglePatternWithSameElementInDescendingOrder(4)
+}
 
 
+fun simulateArrayQuestionMethods() {
+    val arrayQuestion = ArrayQuestion()
+    // arrayQuestion.swapElementOfArray(arrayOf(1,2,3,4,5,6,7,8,9))
+    // println("${arrayQuestion.findSmallestElementInArray(arrayOf(1,2,3,4,5,6,7,8,9))}")
+    // println("${arrayQuestion.findLargestElementInArray(arrayOf(1,2,3,4,5,6,7,8,9))}")
+    arrayQuestion.reverseArray(arrayOf(1,2,3,4,5,6,7,8,9))
 }
