@@ -1,4 +1,4 @@
-package dsa.apna_college
+package dsa.practice.arrays
 
 class ArrayQuestion {
     fun swapElementOfArray(numbers: Array<Int>) {

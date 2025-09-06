@@ -5,7 +5,7 @@ import coroutines.CalculateExecutionTime
 import coroutines.CoroutineScopeAndBuilder
 import coroutines.CoroutineScopeExamples
 import coroutines.printWorldExplicitJob
-import dsa.apna_college.ArrayQuestion
+import dsa.practice.arrays.ArrayQuestion
 import dsa.apna_college.PatternQuestion
 import interview_practice.dsa.DSAOnString
 import kotlinx.coroutines.delay
