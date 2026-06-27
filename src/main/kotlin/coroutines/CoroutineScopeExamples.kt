@@ -1,10 +1,11 @@
 package coroutines
 
 import kotlinx.coroutines.*
+import utils.ExecutionTime
 
 class CoroutineScopeExamples {
     suspend fun asyncPrintWorld() = coroutineScope {
-        CalculateExecutionTime.setStartTime()
+        val executionTime = ExecutionTime()
         launch(Dispatchers.Default) {
             delay(2000)
             println("${Thread.currentThread().name} :: Delay for 2ms")
@@ -16,22 +17,20 @@ class CoroutineScopeExamples {
         launch(Dispatchers.Default) {
             delay(4000)
             println("${Thread.currentThread().name} :: Delay for 4ms")
-            CalculateExecutionTime.setEndTime()
-            println("${CalculateExecutionTime.getExecutionTime().inWholeMilliseconds} ms")
+            println(executionTime.getExecutionTime())
         }
         println("${Thread.currentThread().name} :: Hello")
     }
 
     suspend fun syncPrintWorld() = coroutineScope {
-        CalculateExecutionTime.setStartTime()
+        val executionTime = ExecutionTime()
         delay(2000)
         println("${Thread.currentThread().name} :: Delay for 2ms")
         delay(1000)
         println("${Thread.currentThread().name} :: Delay for 1ms")
         delay(4000)
         println("${Thread.currentThread().name} :: Delay for 4ms")
-        CalculateExecutionTime.setEndTime()
-        println("${CalculateExecutionTime.getExecutionTime().inWholeMilliseconds} ms")
+        println(executionTime.getExecutionTime())
         println("${Thread.currentThread().name} :: Hello")
     }
 }
