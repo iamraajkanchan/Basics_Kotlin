@@ -6,6 +6,6 @@ import kotlin.time.toDuration
 class ExecutionTime {
     private val startTime: Long = System.currentTimeMillis()
     fun getExecutionTime(): String {
-        return "${(System.currentTimeMillis() - startTime).toDuration(DurationUnit.MICROSECONDS).inWholeMilliseconds} ms"
+        return "Execution Time : ${(System.currentTimeMillis() - startTime).toDuration(DurationUnit.MICROSECONDS).inWholeMilliseconds} ms"
     }
 }

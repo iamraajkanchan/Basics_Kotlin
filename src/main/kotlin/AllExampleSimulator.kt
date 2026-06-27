@@ -19,7 +19,7 @@ import kotlin.time.measureTimedValue
 
 fun main() {
     val coroutineScope = CoroutineScope(Dispatchers.IO)
-    coroutineScope.launch { simulateCoroutineScopeExamples() } // This line is not working
+    // coroutineScope.launch { simulateCoroutineScopeExamples() } // This line is not working
     runBlocking { simulateCoroutineScopeExamples() } // This line is working
 }
 
@@ -28,14 +28,14 @@ suspend fun simulateCoroutineScopeAndBuilder() {
     val coroutineScopeAndBuilder = CoroutineScopeAndBuilder()
     coroutineScopeAndBuilder.printWorldCoroutineScopeAndBuilder()
     delay(3000L)
-    println("Execution Time: ${executionTime.getExecutionTime()}")
+    println(executionTime.getExecutionTime())
     println("Done")
 }
 
 suspend fun simulateCoroutineScopeExamples() {
     val coroutineScopeInstance = CoroutineScopeExamples()
-    // coroutineScopeInstance.asyncPrintWorld()
-    coroutineScopeInstance.syncPrintWorld()
+    coroutineScopeInstance.asyncPrintWorld()
+    //coroutineScopeInstance.syncPrintWorld()
 }
 
 fun simulateDSAOnString() {
