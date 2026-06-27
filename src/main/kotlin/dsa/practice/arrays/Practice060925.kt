@@ -14,7 +14,7 @@ class Practice060925 {
         var start = 0
         var end = numbers.size - 1
         while (start < end) {
-            var temp = numbers[end]
+            val temp = numbers[end]
             numbers[end] = numbers[start]
             numbers[start] = temp
             start++

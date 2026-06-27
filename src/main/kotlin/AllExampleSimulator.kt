@@ -1,37 +1,41 @@
 import common.SingletonClassDemo
 import common.Utility
 import coroutines.BasicCoroutines
-import coroutines.CalculateExecutionTime
 import coroutines.CoroutineScopeAndBuilder
 import coroutines.CoroutineScopeExamples
 import coroutines.printWorldExplicitJob
 import dsa.practice.arrays.ArrayQuestion
 import dsa.apna_college.PatternQuestion
 import interview_practice.dsa.DSAOnString
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import utils.ExecutionTime
 import kotlin.time.ExperimentalTime
 import kotlin.time.TimedValue
 import kotlin.time.measureTimedValue
 
 fun main() {
-    // simulateSingletonClassDemo()
-    // simulatePatternQuestionMethods()
-    simulateArrayQuestionMethods()
+    val coroutineScope = CoroutineScope(Dispatchers.IO)
+    // coroutineScope.launch { simulateCoroutineScopeExamples() } // This line is not working
+    runBlocking { simulateCoroutineScopeExamples() } // This line is working
 }
 
 suspend fun simulateCoroutineScopeAndBuilder() {
-    CalculateExecutionTime.setStartTime()
+    val executionTime = ExecutionTime()
     val coroutineScopeAndBuilder = CoroutineScopeAndBuilder()
     coroutineScopeAndBuilder.printWorldCoroutineScopeAndBuilder()
     delay(3000L)
-    CalculateExecutionTime.setEndTime()
-    println("Execution Time: ${CalculateExecutionTime.getExecutionTime()}")
+    println(executionTime.getExecutionTime())
     println("Done")
 }
 
 suspend fun simulateCoroutineScopeExamples() {
     val coroutineScopeInstance = CoroutineScopeExamples()
-    coroutineScopeInstance.printWorld()
+    coroutineScopeInstance.asyncPrintWorld()
+    //coroutineScopeInstance.syncPrintWorld()
 }
 
 fun simulateDSAOnString() {
