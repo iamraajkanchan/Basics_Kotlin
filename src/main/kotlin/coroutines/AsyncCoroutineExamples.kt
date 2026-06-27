@@ -3,12 +3,6 @@ package coroutines
 import common.Utility
 import kotlinx.coroutines.*
 
-fun main() {
-    val instance = AsyncCoroutineExamples()
-    instance.simpleAsyncExampleWithRunBlocking()
-    instance.simpleAsyncExampleWithCoroutineScope()
-}
-
 class AsyncCoroutineExamples {
 
     fun simpleAsyncExampleWithRunBlocking() {
