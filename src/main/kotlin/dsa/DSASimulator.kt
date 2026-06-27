@@ -10,11 +10,18 @@ val range = 1..100
 val randomArray = IntArray(randomArraySize) { Random.nextInt(range.first, range.last + 1) }
 
 fun main() {
-    simulatePractice060925()
+    // simulatePractice060925()
+    returnMyNameCallback { result ->
+        println(result)
+    }
 }
 
 fun simulatePractice060925() {
     val practice = Practice060925()
     practice.simpleArrayProperties(randomArray)
     practice.reverseArray(randomArray)
+}
+
+private fun returnMyNameCallback(a: (String) -> Unit) {
+    a("Raj")
 }

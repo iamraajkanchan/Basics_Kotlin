@@ -8,15 +8,20 @@ import coroutines.printWorldExplicitJob
 import dsa.practice.arrays.ArrayQuestion
 import dsa.apna_college.PatternQuestion
 import interview_practice.dsa.DSAOnString
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlin.time.ExperimentalTime
 import kotlin.time.TimedValue
 import kotlin.time.measureTimedValue
 
 fun main() {
-    // simulateSingletonClassDemo()
-    // simulatePatternQuestionMethods()
-    simulateArrayQuestionMethods()
+    val coroutineScope = CoroutineScope(Dispatchers.IO)
+    coroutineScope.launch { simulateCoroutineScopeExamples() } // This line is not working
+    runBlocking { simulateCoroutineScopeExamples() } // This line is working
 }
 
 suspend fun simulateCoroutineScopeAndBuilder() {
@@ -31,7 +36,8 @@ suspend fun simulateCoroutineScopeAndBuilder() {
 
 suspend fun simulateCoroutineScopeExamples() {
     val coroutineScopeInstance = CoroutineScopeExamples()
-    coroutineScopeInstance.printWorld()
+    // coroutineScopeInstance.asyncPrintWorld()
+    coroutineScopeInstance.syncPrintWorld()
 }
 
 fun simulateDSAOnString() {
