@@ -1,5 +1,4 @@
 import common.SingletonClassDemo
-import common.Utility
 import coroutines.BasicCoroutines
 import coroutines.CoroutineScopeAndBuilder
 import coroutines.CoroutineScopeExamples
@@ -8,8 +7,12 @@ import dsa.practice.arrays.ArrayQuestion
 import dsa.apna_college.PatternQuestion
 import interview_practice.dsa.DSAOnString
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.consumeAsFlow
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import utils.ExecutionTime
@@ -51,10 +54,17 @@ suspend fun simulateExplicitJob() {
     println("It took ${res.duration} to calculate ${res.value}")
 }
 
-suspend fun simulateBasicCoroutines() : String {
+@OptIn(DelicateCoroutinesApi::class)
+fun simulateBasicCoroutines()  {
     val basicCoroutines = BasicCoroutines()
-    Utility.printLog(BasicCoroutines::class.java, Thread.currentThread().stackTrace[2], "Waiting for the suspended function to get the value.")
-    return basicCoroutines.getValueAfterThreeSeconds();
+    GlobalScope.launch {
+        val resultChannel = basicCoroutines.getValueAfterThreeSeconds()
+        println("Raj Kanchan Logcat :: simulateBasicCoroutines :: resultChannel : ${resultChannel.consumeAsFlow().flowOn(
+            Dispatchers.IO).collect {
+                println(it)
+        }}")
+    }
+    Thread.sleep(4000)
 }
 
 
@@ -77,5 +87,7 @@ fun simulateArrayQuestionMethods() {
     // arrayQuestion.swapElementOfArray(arrayOf(1,2,3,4,5,6,7,8,9))
     // println("${arrayQuestion.findSmallestElementInArray(arrayOf(1,2,3,4,5,6,7,8,9))}")
     // println("${arrayQuestion.findLargestElementInArray(arrayOf(1,2,3,4,5,6,7,8,9))}")
-    arrayQuestion.reverseArray(arrayOf(1,2,3,4,5,6,7,8,9))
+    // arrayQuestion.reverseArray(arrayOf(1,2,3,4,5,6,7,8,9))
+    val result = arrayQuestion.findMaxSumOfConsecutiveBinaryElements(arrayOf(1,0,1,1,0,1,1,1,0))
+    println(result)
 }

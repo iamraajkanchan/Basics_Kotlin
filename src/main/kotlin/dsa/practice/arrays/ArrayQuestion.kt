@@ -1,6 +1,7 @@
 package dsa.practice.arrays
 
 class ArrayQuestion {
+
     fun swapElementOfArray(numbers: Array<Int>) {
         var i = 0;
         while (i + 1 < numbers.size) {
@@ -21,6 +22,7 @@ class ArrayQuestion {
         }
         return smallest
     }
+
     fun findLargestElementInArray(numbers: Array<Int>) : Int {
         var greatest = Int.MIN_VALUE
         for (i in numbers.indices) {
@@ -42,5 +44,30 @@ class ArrayQuestion {
             end--
         }
         println(numbers.contentToString())
+    }
+
+    /**
+     * Return the maximum number of consecutive binary numbers of an array element
+     * eg: Input Numbers = [1,0,1,1,0,1,1,1,0] Output = 3
+     * eg: Input Numbers = [1,0,1,1,0] Output = 2
+     * */
+    fun findMaxSumOfConsecutiveBinaryElements(binaryNumbers: Array<Int>): Int {
+        var count = 0
+        var max = 0
+
+        for (bin in binaryNumbers) {
+            if (bin == 1) {
+                count++
+            } else {
+                if (count > max) {
+                    max = count
+                }
+                count = 0
+            }
+        }
+        if (count > max) {
+            max = count
+        }
+        return max
     }
 }
