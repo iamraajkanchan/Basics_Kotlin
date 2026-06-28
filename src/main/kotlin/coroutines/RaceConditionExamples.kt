@@ -22,7 +22,7 @@ fun main() {
 fun getCounterResultFromCoroutineScope() {
     val methodScope = CoroutineScope(Dispatchers.IO)
     methodScope.launch {
-        createRaceConditionProblem { counter++ }
+        counterRaceConditionProblem { counter++ }
         println("getCounterResultFromCoroutineScope :: Counter : $counter")
     }
 }
@@ -33,7 +33,7 @@ fun getCounterResultFromCoroutineScope() {
 
 fun getCounterResultFromGlobalScope() {
     GlobalScope.launch {
-        createRaceConditionProblem { counter++ }
+        counterRaceConditionProblem { counter++ }
         println("getCounterResultFromGlobalScope :: Counter: $counter")
     }
 }
@@ -44,12 +44,12 @@ fun getCounterResultFromGlobalScope() {
 
 fun getCounterResultFromRunBlocking() {
     runBlocking {
-        createRaceConditionProblem { counter++ }
+        counterRaceConditionProblem { counter++ }
         println("getCounterResultFromRunBlocking :: Counter : $counter")
     }
 }
 
-suspend fun createRaceConditionProblem(action: suspend () -> Unit) {
+suspend fun counterRaceConditionProblem(action: suspend () -> Unit) {
     val n = 100
     val k = 1000
     coroutineScope {
@@ -69,7 +69,7 @@ suspend fun createRaceConditionProblem(action: suspend () -> Unit) {
 
 fun getCounterResultFromRunBlockingWithMutex() {
     runBlocking {
-        createRaceConditionProblem {
+        counterRaceConditionProblem {
             raceConditionMutex.withLock {
                 counter++
             }
