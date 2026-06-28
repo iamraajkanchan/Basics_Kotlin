@@ -1,4 +1,4 @@
-package coroutines
+package coroutines.self
 
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.ReceiveChannel

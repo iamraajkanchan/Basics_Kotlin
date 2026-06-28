@@ -1,8 +1,6 @@
-package coroutines
+package coroutines.self
 
 import kotlinx.coroutines.*
-import java.time.Duration
-import kotlin.time.*
 
 suspend fun printWorldExplicitJob() = coroutineScope {
     val firstJob = launch(Dispatchers.Default) {

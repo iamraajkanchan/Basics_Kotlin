@@ -1,8 +1,8 @@
 import common.SingletonClassDemo
-import coroutines.BasicCoroutines
-import coroutines.CoroutineScopeAndBuilder
-import coroutines.CoroutineScopeExamples
-import coroutines.printWorldExplicitJob
+import coroutines.self.BasicCoroutines
+import coroutines.self.CoroutineScopeAndBuilder
+import coroutines.self.CoroutineScopeExamples
+import coroutines.self.printWorldExplicitJob
 import dsa.practice.arrays.ArrayQuestion
 import dsa.apna_college.PatternQuestion
 import interview_practice.dsa.DSAOnString

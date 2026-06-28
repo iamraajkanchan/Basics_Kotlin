@@ -1,11 +1,7 @@
-package coroutines
+package coroutines.self
 
 import kotlinx.coroutines.*
-import utils.ExecutionTime
 import utils.ExecutionTimer
-import java.util.concurrent.TimeUnit
-import kotlin.time.DurationUnit
-import kotlin.time.toDuration
 
 
 class CoroutineScopeAndBuilder {

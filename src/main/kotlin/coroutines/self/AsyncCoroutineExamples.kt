@@ -1,4 +1,4 @@
-package coroutines
+package coroutines.self
 
 import common.Utility
 import kotlinx.coroutines.*
