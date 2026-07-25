@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import strings.self.StringFunctionExamples
 import utils.ExecutionTime
 import kotlin.time.ExperimentalTime
 import kotlin.time.TimedValue
@@ -23,7 +24,8 @@ import kotlin.time.measureTimedValue
 fun main() {
     val coroutineScope = CoroutineScope(Dispatchers.IO)
     // coroutineScope.launch { simulateCoroutineScopeExamples() } // This line is not working
-    runBlocking { simulateCoroutineScopeExamples() } // This line is working
+    // runBlocking { simulateCoroutineScopeExamples() } // This line is working
+    simulateStringFunctionExamples()
 }
 
 suspend fun simulateCoroutineScopeAndBuilder() {
@@ -90,4 +92,13 @@ fun simulateArrayQuestionMethods() {
     // arrayQuestion.reverseArray(arrayOf(1,2,3,4,5,6,7,8,9))
     val result = arrayQuestion.findMaxSumOfConsecutiveBinaryElements(arrayOf(1,0,1,1,0,1,1,1,0))
     println(result)
+}
+
+fun simulateStringFunctionExamples() {
+    val stringFunctionExamples = StringFunctionExamples()
+    val stringVar = "Raj"
+    // println("stringVar: ${stringFunctionExamples.getMyStringLength(stringVar)}")
+    // println("stringVar: ${stringFunctionExamples.getMySubStringLength(stringVar, 1,2)}")
+    // println("$stringVar: ${stringFunctionExamples.getMyStringTake(stringVar, 2)}")
+    println("$stringVar: ${stringFunctionExamples.getMyStringTakeLast(stringVar, 1)}")
 }
