@@ -9,24 +9,28 @@ class StringFunctionExamples {
 
     fun getMyStringLength(message: String = validString): Int = message.length
     /**
+     * Description: Returns the size of a String
      * Input: Raj
      * Output Raj: 3
      * */
 
     fun getMySubStringLength(message: String = validString, startStringLength: Int = 0): String = message.substring(startStringLength)
     /**
+     * Description:
      * Input: Raj, 1
      * Output: aj
      * */
 
     fun getMySubStringLength(message: String = validString, startStringLength: Int = 0, endStringLength: Int = validString.length): String = message.substring(startStringLength, endStringLength)
     /**
+     * Description: Crops a String from a certain length to a certain length.
      * Input: Raj, 1, 2
      * Output: a
      * */
 
     fun getMyStringTake(message: String = validString, takeLength: Int) : String = message.take(takeLength)
     /**
+     * Description: Crops a String from start to a certain length.
      * Input: Raj, 2
      * Output: Ra
      * Input: Raj, 3
@@ -37,6 +41,7 @@ class StringFunctionExamples {
 
     fun getMyStringTakeLast(message: String = validString, takeLastLength: Int) : String = message.takeLast(takeLastLength)
     /**
+     * Description: Crops a String from end to a certain length.
      * Input: Raj, 1
      * Output: j
      * Input: Raj, 2
@@ -49,8 +54,9 @@ class StringFunctionExamples {
 
     fun getMyStringDrop(message: String = validString, dropLength: Int) = message.drop(dropLength)
     /**
-     * Input:
-     * Output:
+     * Description: Crops a String from a certain length.
+     * Input: ABCDEFGHIJKLMNOPQRSTUVWXYZ, 2
+     * Output: ABCDEFGHIJKLMNOPQRSTUVWXYZ: CDEFGHIJKLMNOPQRSTUVWXYZ
      * */
 
     fun getMyStringDropLast(message: String = validString, dropLastLength: Int) = message.dropLast(dropLastLength)

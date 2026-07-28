@@ -96,9 +96,10 @@ fun simulateArrayQuestionMethods() {
 
 fun simulateStringFunctionExamples() {
     val stringFunctionExamples = StringFunctionExamples()
-    val stringVar = "Raj"
+    val stringVar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     // println("stringVar: ${stringFunctionExamples.getMyStringLength(stringVar)}")
-    // println("stringVar: ${stringFunctionExamples.getMySubStringLength(stringVar, 1,2)}")
+    // println("stringVar: ${stringFunctionExamples.getMySubStringLength(stringVar, 1, 2)}")
     // println("$stringVar: ${stringFunctionExamples.getMyStringTake(stringVar, 2)}")
-    println("$stringVar: ${stringFunctionExamples.getMyStringTakeLast(stringVar, 1)}")
+    // println("$stringVar: ${stringFunctionExamples.getMyStringTakeLast(stringVar, 2)}")
+    println("$stringVar: ${stringFunctionExamples.getMyStringDrop(stringVar, 2)}")
 }
