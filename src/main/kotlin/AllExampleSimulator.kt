@@ -97,9 +97,18 @@ fun simulateArrayQuestionMethods() {
 fun simulateStringFunctionExamples() {
     val stringFunctionExamples = StringFunctionExamples()
     val stringVar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    val startLength  = 2
+    val endLength  = 3
     // println("stringVar: ${stringFunctionExamples.getMyStringLength(stringVar)}")
-    // println("stringVar: ${stringFunctionExamples.getMySubStringLength(stringVar, 1, 2)}")
-    // println("$stringVar: ${stringFunctionExamples.getMyStringTake(stringVar, 2)}")
-    // println("$stringVar: ${stringFunctionExamples.getMyStringTakeLast(stringVar, 2)}")
-    println("$stringVar: ${stringFunctionExamples.getMyStringDrop(stringVar, 2)}")
+    // println("stringVar: ${stringFunctionExamples.getMySubStringLength(stringVar, startLength)}")
+    // println("stringVar: ${stringFunctionExamples.getMySubStringLength(stringVar, startLength, endLength)}")
+    // println("$stringVar: ${stringFunctionExamples.getMyStringTake(stringVar, startLength)}")
+    // println("$stringVar: ${stringFunctionExamples.getMyStringTakeLast(stringVar, startLength)}")
+    // println("$stringVar: ${stringFunctionExamples.getMyStringDrop(stringVar, startLength)}")
+    // println("$stringVar: ${stringFunctionExamples.getMyStringDropLast(stringVar, startLength)}")
+    // println(stringFunctionExamples.getMyStringSplit(delimiter =  ",").joinToString(prefix = "{", postfix = "}", separator = "|"))
+    // println(stringFunctionExamples.getMyStringChunk(stringVar, 3))
+    // println(stringFunctionExamples.getMyStringWindow(stringVar, 3))
+    println("Contains QRS: ${stringFunctionExamples.checkMyStringContains(stringVar, "QRS")}")
+    println("Contains QUERY: ${stringFunctionExamples.checkMyStringContains(stringVar, "QUERY")}")
 }

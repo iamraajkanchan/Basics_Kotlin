@@ -31,12 +31,12 @@ class StringFunctionExamples {
     fun getMyStringTake(message: String = validString, takeLength: Int) : String = message.take(takeLength)
     /**
      * Description: Crops a String from start to a certain length.
-     * Input: Raj, 2
-     * Output: Ra
-     * Input: Raj, 3
-     * Output: Raj
-     * Input: Raj, 5
-     * Output: Raj
+     * Input: ABCDEFGHIJKLMNOPQRSTUVWXYZ, 2
+     * Output: AB
+     * Input: ABCDEFGHIJKLMNOPQRSTUVWXYZ, 3
+     * Output: ABC
+     * Input: ABCDEFGHIJKLMNOPQRSTUVWXYZ, 30
+     * Output: ABCDEFGHIJKLMNOPQRSTUVWXYZ
      * */
 
     fun getMyStringTakeLast(message: String = validString, takeLastLength: Int) : String = message.takeLast(takeLastLength)
@@ -61,174 +61,206 @@ class StringFunctionExamples {
 
     fun getMyStringDropLast(message: String = validString, dropLastLength: Int) = message.dropLast(dropLastLength)
     /**
-     * Input:
-     * Output
+     * Description: Crops a String from last to a certain length
+     * Input: ABCDEFGHIJKLMNOPQRSTUVWXYZ, 2
+     * Output: ABCDEFGHIJKLMNOPQRSTUVWXYZ: ABCDEFGHIJKLMNOPQRSTUVWX
      * */
 
     fun getMyStringSplit(message: String = validStringWithDelimiter, delimiter: String) = message.split(delimiter)
     /**
-     * Input:
-     * Output:
+     * Description: Splits a string based on the value of provided delimiter into an array of Strings or Characters.
+     * Input: "a,b,c,d,e,f,g,h", ","
+     * Output: {a|b|c|d|e|f|g|h}
      * */
 
-    fun getMyStringChunk(message: String = validString, chunkLength: Int) = message.chunked(chunkLength)
+        fun getMyStringChunk(message: String = validString, chunkLength: Int) = message.chunked(chunkLength) {char -> "**$char**"}
     /**
-     * Input:
-     * Output:
+     * Description: Splits a string into non-overlapping chunks of a fixed maximum size.
+     * Input: ABCDEFGHIJKLMNOPQRSTUVWXYZ, 3
+     * Output: [**ABC**, **DEF**, **GHI**, **JKL**, **MNO**, **PQR**, **STU**, **VWX**, **YZ**]
      * */
 
-    fun getMyStringWindow(message: String = validString, windowLength: Int) = message.windowed(windowLength)
+    fun getMyStringWindow(message: String = validString, windowLength: Int) = message.windowed(windowLength) {char -> "**$char**"}
     /**
-     * Input:
-     * Output:
+     * Description:
+     * Input: ABCDEFGHIJKLMNOPQRSTUVWXYZ, 3
+     * Output: [**ABC**, **BCD**, **CDE**, **DEF**, **EFG**, **FGH**, **GHI**, **HIJ**, **IJK**, **JKL**, **KLM**, **LMN**, **MNO**, **NOP**, **OPQ**, **PQR**, **QRS**, **RST**, **STU**, **TUV**, **UVW**, **VWX**, **WXY**, **XYZ**]
      * */
 
     fun checkMyStringContains(message: String = validString, literal: String) = message.contains(literal)
     /**
-     * Input:
-     * Output:
+     * Description: Compares String literals with any String and returns True or False accordingly
+     *
+     * Input:   ABCDEFGHIJKLMNOPQRSTUVWXYZ, QRS
+     *          ABCDEFGHIJKLMNOPQRSTUVWXYZ, QUERY
+     * Output:  Contains QRS: true
+     *          Contains QUERY: false
      * */
 
     fun checkMyStringContains(message: String = validString, literal: String, ignoreCase: Boolean) = message.contains(literal, ignoreCase)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringStartsWith(message: String = validString, literal: String) = message.startsWith(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringEndsWith(message: String = validString, literal: String) = message.endsWith(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getMyStringIndex(message: String = validString, literal: String) = message.indexOf(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getMyStringLastIndex(message: String = validString, literal: String) = message.lastIndexOf(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getMyStringLastIndexWithIndex(message: String = validString, literal: String, index: Int) = message.lastIndexOf(literal, index)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringIsDigitByAny(message: String = validNumber) = message.any { it.isDigit() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringIsLetterByAny(message: String = validString, literal: String) = message.any { it.isLetter() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringIsWhitespaceByAny(message: String = validString, literal: String) = message.any { it.isWhitespace() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringIsLetterOrDigitByAny(message: String = validString, literal: String) = message.any { it.isLetterOrDigit() }
     /**
-     * Input
-     * Output
+     * Description:
+     * Input:
+     * Output:
      * */
 
     fun checkMyStringIsDigitByAll(message: String = validNumber) = message.all { it.isDigit() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringIsLetterByAll(message: String = validNumber) = message.all { it.isLetter() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringIsWhitespaceByAll(message: String = validNumber) = message.all { it.isWhitespace() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun checkMyStringIsLetterOrDigitByAll(message: String = validNumber) = message.all { it.isLetterOrDigit() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun replaceMyStringWithLiteral(message: String = validString, literal: String) = message.replace(literal, validString)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun firstReplaceMyStringWithLiteral(message: String = validString, literal: String) = message.replaceFirst(literal, validString)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun removePrefixFromString(message: String = validString, literal: String) = message.removePrefix(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun removeSuffixFromString(message: String = validString, literal: String) = message.removeSuffix(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getSubStringBefore(message: String = validStringPath, literal: String) = message.substringBefore(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getSubStringAfter(message: String = validStringPath, literal: String) = message.substringAfter(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getSubstringBeforeLast(message: String = validStringPath, literal: String) = message.substringBeforeLast(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getSubstringAfterLast(message: String =validStringPath, literal: String) = message.substringAfterLast(literal)
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getStringFilterForDigits(message: String = validNumber) = message.filter { it.isDigit() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
 
     fun getStringFilterForLetters(message: String = validNumber) = message.filter { !it.isDigit() }
     /**
+     * Description:
      * Input:
      * Output:
      * */
