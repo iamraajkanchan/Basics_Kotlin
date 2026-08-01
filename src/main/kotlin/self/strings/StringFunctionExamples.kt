@@ -1,4 +1,4 @@
-package strings.self
+package self.strings
 
 class StringFunctionExamples {
     val validInput = "abcdefghijklmnopqrstuvwxyz1234567890"

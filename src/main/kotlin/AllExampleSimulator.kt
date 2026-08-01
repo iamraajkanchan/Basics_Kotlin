@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.consumeAsFlow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import strings.self.StringFunctionExamples
+import self.strings.StringFunctionExamples
 import utils.ExecutionTime
 import kotlin.time.ExperimentalTime
 import kotlin.time.TimedValue
